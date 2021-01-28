@@ -1,0 +1,517 @@
+/* orange color :  #e67e22 */
+/* -------------------------------------------------- */
+/* Basic Setup */
+/* -------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+html,body {
+  background: white;
+  color: #555;
+  font-family: "Lato", "Arial", "sans-serif";
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+.clearfix{zoom: 1;}
+.clearfix:after
+{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* -------------------------------------------------- */
+/* Reusable components */
+/* -------------------------------------------------- */
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* .box{padding: 1%;} */
+
+/* ---------------HEADINGS--------------- */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 200%; /* above at the second element(html), we set the font-size to 20, so now at this element, the size wil be 40 */
+  word-spacing: 4px;
+}
+h2 {
+  font-size: 160%;
+  text-align: center;
+  margin-bottom: 30px;
+  word-spacing: 2px;
+}
+h2:after {
+  display: block;
+  background-color: #e67e22;
+  height: 2px;
+  content: "";
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+h3 {
+  font-size: 110%;
+  margin-bottom: 15px;
+}
+
+/* ---------------PARAGRAPHS--------------- */
+.long-copy {
+  line-height: 145%; /* should be between 120% and 150% */
+  width: 70%;
+  margin-left: 15%; /* margin: 0 auto; */
+}
+.box p {
+  font-size: 90%;
+  line-height: 145%;
+}
+
+/* ---------------ICONS--------------- */
+.icon-big {
+  font-size: 350%;
+  display: block;
+  color: #e67e22;
+  margin-bottom: 10px;
+}
+.icon-small
+{
+  display: inline-block;
+  text-align: center; /* center the text inside the inline-block*/
+  width: 30px;
+  font-size: 120%;
+  color: #e67e22;
+  margin-right: 10px;
+
+  /* secrets to align text and icons */
+  line-height: 140%;
+  vertical-align: middle;
+  margin-top: -5px;
+}
+
+/* ---------------LINKS--------------- */
+a
+{
+  color: #e67e22;
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #e67e22;
+  transition: border-bottom .2s, color .2s;
+  -webkit-transition: border-bottom .2s, color .2s;
+  -moz-transition: border-bottom .2s, color .2s;
+  -ms-transition: border-bottom .2s, color .2s;
+  -o-transition: border-bottom .2s, color .2s;
+}
+a:hover, a:active
+{
+  color: #555;
+  border-bottom: 1px solid transparent; /* شفاف */
+
+}
+
+
+/* ---------------BUTTONS--------------- */
+.btn,
+input[type=submit] {
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  font-weight: 300;
+  border-radius: 200px;
+  border: none;
+  transition: background-color 0.4s, color 0.4s, border 0.4s; /*when you hover and move out of the btn, change the (color, border, background) in .4 seconds*/
+}
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active
+{
+  background: #cf6d17;
+}
+.btn-full,
+input[type=submit] {
+  color: white;
+  border: 1px solid #e67e22;
+  background: #e67e22;
+  margin-right: 15px;
+}
+.btn-full:hover,
+.btn-full:active,
+input[type=submit]:hover,
+input[type=submit] {
+  border: 1px solid #cf6d17;
+}
+.btn-ghost {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+.btn-ghost:hover,
+.btn-ghost:active {
+  color: white;
+  border: 1px solid #e67e22;
+}
+
+/* -------------------------------------------------- */
+/* Header */
+/* -------------------------------------------------- */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("img/hero.jpg"); /*linear-gradient to make multiple images*/
+  background-size: cover; /*size and position so that the image does not zoom in*/
+  background-position: center;
+  height: 100vh; /*the height is 100% of the viewport*/
+  background-attachment: fixed;
+}
+.hero-text-box {
+  width: 1140px;
+  /*Tovertivallyandhorizontallycenteranelement*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.logo {
+  width: auto;
+  height: 100px;
+  float: left;
+  margin-top: 20px;
+}
+.logo-black
+{
+  display: none;
+  width: auto;
+  height: 50px;
+  float: left;
+  margin-top: 5px;
+}
+/* Main nav */
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 50px;
+}
+.main-nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.main-nav li a
+{
+  padding: 8px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.4s;
+}
+.main-nav li a:hover,
+.main-nav li a:active
+{
+  border-bottom: 2px solid #e67e22;
+}
+
+/* Mobile nav */
+.mobile-nav-icon
+{
+  float:right;
+  color: white;
+  cursor: pointer;
+  display: none;
+  border-bottom: none;
+}
+.mobile-nav-icon:hover, .mobile-nav-icon:active{border-bottom: none;} /* i added this */
+.mobile-nav-icon i
+{
+  font-size: 200%;
+}
+/* Sticky nav */
+.sticky
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(231, 229, 229, 0.98);
+  z-index: 9999;
+}
+.sticky .main-nav{margin-top: 15px;}
+.sticky .main-nav li a
+{
+  padding: 15px 0;
+  color: #555;
+}
+.sticky .logo{display: none;}
+.sticky .logo-black{display: block;}
+
+
+/* -------------------------------------------------- */
+/* FEATURES */
+/* -------------------------------------------------- */
+.section-features .long-copy{margin-bottom: 40px;}
+
+/* -------------------------------------------------- */
+/* MEALS */
+/* -------------------------------------------------- */
+.section-meals{padding: 0;}
+.meals-showcase
+{
+  width: 100%;
+  list-style: none;
+}
+.meals-showcase li
+{
+  display: block;
+  float: left;
+  /* float comes only with block elements >>>> the same as display:inline-block without the float, but the width will not be full*/
+  width: 25%;
+
+}
+.meals-showcase li .meal-photo
+{
+  width: 100%;
+  margin:0;
+  overflow: hidden;
+  background: black;
+}
+.meals-showcase li .meal-photo img
+{
+  opacity: .7; /* Another way to make an element darker is to make its parent's(figure) background black, and give it an opacity of (maybe) .7*/
+  width: 100%;
+  height: auto;
+  transform: scale(1.15); /* the width was 100%, now it will be 115% */
+  transition: transform .5s, opacity .5s;
+}
+.meals-showcase li .meal-photo img:hover
+{
+  transform: scale(1.03); /* the ".03" because without it, you will find a little padding, it is just a trich*/
+  opacity: 1;
+}
+
+/* -------------------------------------------------- */
+/* HOW IT WORKS */
+/* -------------------------------------------------- */
+.sections-steps{background-color: rgb(233, 233, 233);}
+.steps-box:first-of-type{text-align: right;margin-top: 30px;}
+.steps-box .app-screen{width: 40%;}
+.steps-box:last-of-type{margin-top: 70px;}
+.works-step
+{
+  margin-bottom: 50px;
+}
+.works-step:last-of-type{margin-bottom: 80px;}
+.works-step div
+{
+  color: #e67e22;
+  border: 2px solid #e67e22;
+  display: block; /* we make it as a block because we will use a left float with it*/
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  padding: 5px;
+  font-size: 150%;
+  float: left;
+  margin-right: 25px;
+}
+.btn-app{border: none;}
+.btn-app:hover{border: none;}
+.btn-app img
+{
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* -------------------------------------------------- */
+/* CITIES */
+/* -------------------------------------------------- */
+.section-cities .row{overflow: hidden;}
+.section-cities .row .box img
+{
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+.city-feature{margin-bottom: 5px;}
+
+/* -------------------------------------------------- */
+/* TESTIMONIALS */
+/* -------------------------------------------------- */
+.section-testimonials
+{
+  background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('img/back-customers.jpg');
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
+}
+/* .section-testimonials .row img{width: 50px; height: auto;border-radius: 50%;display: inline-block;line-height: 140%;vertical-align: middle;margin-top: -5px;}
+.section-testimonials .row h3:last-of-type{display: inline-block;} */
+blockquote
+{
+  padding: 2%;
+  font-style: italic;
+  line-height: 145%;
+  letter-spacing: 2px;
+  position: relative;
+  margin-top: 40px;
+}
+blockquote::before
+{
+  content: "\201C";  /* you can't use the character entity code here, use this site https://css-tricks.com/snippets/html/glyphs/*/
+  font-size: 500%;
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -3px;
+}
+cite{font-size: 90%;margin-top: 25px;display: block;}
+cite img
+{
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* modify the height */
+  vertical-align: middle;
+}
+
+/* -------------------------------------------------- */
+/* SIGN UP */
+/* -------------------------------------------------- */
+.section-plans{background-color: #E9E9E9;}
+
+.section-plans .plan-box
+{
+  background-color: white;
+  border-radius: 5px;
+  width: 90%;
+  margin-left: 5%; /*to center the div*/
+  box-shadow: 10px 10px 10px #efefef;
+}
+.plan-box div
+{
+  padding: 15px;
+  border-bottom: 2px solid rgb(202, 202, 202);
+}
+.plan-box div:first-child
+{
+  background-color: #fcfcfc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.plan-box div:last-of-type{text-align: center;border: none;}
+.plan-price
+{
+  font-size: 300%; /* 300% of its parent font size which is 20px */
+  font-weight: 100; /* Always decrease the weight when you increase the size, and visa verse*/
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+.plan-price span
+{
+  font-size: 30%; /* 30% of its parent which if (300%).plan-price */
+  font-weight: 300;
+}
+.plan-price-meal{font-size: 80%;}
+.plan-box ul{list-style: none;}
+.plan-box ul li{padding: 5px 0;}
+
+/* -------------------------------------------------- */
+/* FORM */
+/* -------------------------------------------------- */
+.contact-form{width: 60%; margin: 0 auto;}
+input[type=text],
+input[type=email],
+select,
+textarea
+{
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+input[type=checkbox]
+{
+  margin: 10px 5px 10px 0;
+}
+*:focus{outline: none;} /* focus is when you press on an element */
+
+/* -------------------------------------------------- */
+/* FOOTER */
+/* -------------------------------------------------- */
+footer{background: #333;padding: 40px;font-size: 80%;}
+.footer-nav{list-style: none;float: left;}
+.social-links{list-style: none; float: right;}
+.footer-nav li, .social-links li
+{
+  display: inline-block;
+  margin-right: 20px;
+}
+.footer-nav li:last-of-type, .social-links li:last-of-type{margin-right: 0;}
+.footer-nav li a, .social-links li a
+{
+  text-decoration: none;
+  border: none;
+  color: #888;
+  transition: color .4s;
+}
+.footer-nav li a:hover, .social-links li a:hover{color: #ddd;}
+.social-links li a{font-size: 150%;}
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram
+{transition: color .4s;}
+.ion-social-facebook:hover{color: #3b5998;}
+.ion-social-twitter:hover{color: #00aced;}
+.ion-social-googleplus:hover{color: #dd4b39;}
+.ion-social-instagram:hover{color: #517fa4;}
+
+
+footer p{color: #888 ; text-align: center;margin-top: 20px;}
+
+
+/* -------------------------------------------------- */
+/* ANIMATIONS */
+/* -------------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3
+{
+  opacity: 0;
+  animation-duration: 1s;
+}
+.js--wp-4{animation-duration: 1s;}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated
+{
+  opacity : 1;
+}
+
+
+
+
+
+/* before you launch your project the to web, use this tool to compress all your css > https://csscompressor.com/ */
+/*    this code is the same as the above one
+*{margin:0;padding:0}html,body{background:#fff;color:#555;font-family:"Lato","Arial","sans-serif";font-weight:300;font-size:20px;text-rendering:optimizeLegibility;overflow-x:hidden}.clearfix{zoom:1}.clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden}.row{max-width:1140px;margin:0 auto}section{padding:80px 0}h1,h2,h3{font-weight:300;letter-spacing:1px;text-transform:uppercase}h1{margin-top:0;margin-bottom:20px;color:#fff;font-size:200%;word-spacing:4px}h2{font-size:160%;text-align:center;margin-bottom:30px;word-spacing:2px}h2:after{display:block;background-color:#e67e22;height:2px;content:"";width:100px;margin:0 auto;margin-top:20px}h3{font-size:110%;margin-bottom:15px}.long-copy{line-height:145%;width:70%;margin-left:15%}.box p{font-size:90%;line-height:145%}.icon-big{font-size:350%;display:block;color:#e67e22;margin-bottom:10px}.icon-small{display:inline-block;text-align:center;width:30px;font-size:120%;color:#e67e22;margin-right:10px;line-height:140%;vertical-align:middle;margin-top:-5px}a{color:#e67e22;text-decoration:none;padding-bottom:1px;border-bottom:1px solid #e67e22;transition:border-bottom .2s,color .2s}a:hover,a:active{color:#555;border-bottom:1px solid transparent}.btn,input[type=submit]{display:inline-block;padding:10px 30px;text-decoration:none;font-weight:300;border-radius:200px;border:none;transition:background-color 0.4s,color 0.4s,border .4s}.btn:hover,.btn:active,input[type=submit]:hover,input[type=submit]:active{background:#cf6d17}.btn-full,input[type=submit]{color:#fff;border:1px solid #e67e22;background:#e67e22;margin-right:15px}.btn-full:hover,.btn-full:active,input[type=submit]:hover,input[type=submit]{border:1px solid #cf6d17}.btn-ghost{border:1px solid #e67e22;color:#e67e22}.btn-ghost:hover,.btn-ghost:active{color:#fff;border:1px solid #e67e22}header{background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/hero.jpg);background-size:cover;background-position:center;height:100vh;background-attachment:fixed}.hero-text-box{width:1140px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}.logo{width:auto;height:100px;float:left;margin-top:20px}.logo-black{display:none;width:auto;height:50px;float:left;margin-top:5px}.main-nav{float:right;list-style:none;margin-top:50px}.main-nav li{display:inline-block;margin-left:20px}.main-nav li a{padding:8px 0;text-decoration:none;text-transform:uppercase;color:#fff;font-size:90%;border-bottom:2px solid transparent;transition:border-bottom .4s}.main-nav li a:hover,.main-nav li a:active{border-bottom:2px solid #e67e22}.mobile-nav-icon{float:right;color:#fff;cursor:pointer;display:none;border-bottom:none}.mobile-nav-icon:hover,.mobile-nav-icon:active{border-bottom:none}.mobile-nav-icon i{font-size:200%}.sticky{position:fixed;top:0;left:0;width:100%;background:rgba(231,229,229,0.98);z-index:9999}.sticky .main-nav{margin-top:15px}.sticky .main-nav li a{padding:15px 0;color:#555}.sticky .logo{display:none}.sticky .logo-black{display:block}.section-features .long-copy{margin-bottom:40px}.section-meals{padding:0}.meals-showcase{width:100%;list-style:none}.meals-showcase li{display:block;float:left;width:25%}.meals-showcase li .meal-photo{width:100%;margin:0;overflow:hidden;background:#000}.meals-showcase li .meal-photo img{opacity:.7;width:100%;height:auto;transform:scale(1.15);transition:transform .5s,opacity .5s}.meals-showcase li .meal-photo img:hover{transform:scale(1.03);opacity:1}.sections-steps{background-color:#e9e9e9}.steps-box:first-of-type{text-align:right;margin-top:30px}.steps-box .app-screen{width:40%}.steps-box:last-of-type{margin-top:70px}.works-step{margin-bottom:50px}.works-step:last-of-type{margin-bottom:80px}.works-step div{color:#e67e22;border:2px solid #e67e22;display:block;border-radius:50%;height:35px;width:35px;text-align:center;padding:5px;font-size:150%;float:left;margin-right:25px}.btn-app{border:none}.btn-app:hover{border:none}.btn-app img{height:50px;width:auto;margin-right:10px}.section-cities .row{overflow:hidden}.section-cities .row .box img{width:100%;height:auto;margin-bottom:15px}.city-feature{margin-bottom:5px}.section-testimonials{background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)),url(img/back-customers.jpg);background-size:cover;color:#fff;background-attachment:fixed}blockquote{padding:2%;font-style:italic;line-height:145%;letter-spacing:2px;position:relative;margin-top:40px}blockquote::before{content:"\201C";font-size:500%;display:block;position:absolute;top:-5px;left:-3px}cite{font-size:90%;margin-top:25px;display:block}cite img{height:45px;border-radius:50%;margin-right:10px;vertical-align:middle}.section-plans{background-color:#E9E9E9}.section-plans .plan-box{background-color:#fff;border-radius:5px;width:90%;margin-left:5%;box-shadow:10px 10px 10px #efefef}.plan-box div{padding:15px;border-bottom:2px solid #cacaca}.plan-box div:first-child{background-color:#fcfcfc;border-top-left-radius:5px;border-top-right-radius:5px}.plan-box div:last-of-type{text-align:center;border:none}.plan-price{font-size:300%;font-weight:100;margin-bottom:10px;color:#e67e22}.plan-price span{font-size:30%;font-weight:300}.plan-price-meal{font-size:80%}.plan-box ul{list-style:none}.plan-box ul li{padding:5px 0}.contact-form{width:60%;margin:0 auto}input[type=text],input[type=email],select,textarea{width:100%;padding:7px;border-radius:3px;border:1px solid #ccc}input[type=checkbox]{margin:10px 5px 10px 0}:focus{outline:none}footer{background:#333;padding:40px;font-size:80%}.footer-nav{list-style:none;float:left}.social-links{list-style:none;float:right}.footer-nav li,.social-links li{display:inline-block;margin-right:20px}.footer-nav li:last-of-type,.social-links li:last-of-type{margin-right:0}.footer-nav li a,.social-links li a{text-decoration:none;border:none;color:#888;transition:color .4s}.footer-nav li a:hover,.social-links li a:hover{color:#ddd}.social-links li a{font-size:150%}.ion-social-facebook,.ion-social-twitter,.ion-social-googleplus,.ion-social-instagram{transition:color .4s}.ion-social-facebook:hover{color:#3b5998}.ion-social-twitter:hover{color:#00aced}.ion-social-googleplus:hover{color:#dd4b39}.ion-social-instagram:hover{color:#517fa4}footer p{color:#888;text-align:center;margin-top:20px}.js--wp-1,.js--wp-2,.js--wp-3{opacity:0;animation-duration:1s}.js--wp-4{animation-duration:1s}.js--wp-1.animated,.js--wp-2.animated,.js--wp-3.animated{opacity:1}
+*/
